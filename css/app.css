@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.fortune {
+  position: relative;
+  max-width: 740px;
+  width: 100%;
+}
+
+.fortune__rullet {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  background-image: url("../img/QI_rullet-1box.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform-origin: 50% 50%;
+  border-radius: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+.fortune__table {
+  position: absolute;
+  max-width: 414px;
+  width: 100%;
+  height: 410px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -110px;
+  background-image: url(../img/QI_table-1box.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  z-index: -1;
+}
+
+.fortune__arrow {
+  position: absolute;
+  width: 100px;
+  height: 130px;
+  top: 50%;
+  left: 0;
+  transition: 5s;
+  transform-origin: top center;
+  transform: translate(0, -50%);
+  background-image: url("../img/QI_arrow-1box.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.btn {
+  display: block;
+  width: 200px;
+  height: 56px;
+  margin-top: 150px;
+  font-size: 24px;
+  border-radius: 4px;
+  background-color: #563d7c;
+  border: 0;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .fortune__table {
+    max-width: 300px;
+    bottom: -130px;
+  }
+  .fortune__arrow {
+    width: 60px;
+  }
+  .btn {
+    margin-top: 110px;
+  }
+}
