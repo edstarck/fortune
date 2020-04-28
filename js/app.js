@@ -9,18 +9,6 @@
     const turns = Math.random() * (max - min) + min;
     const duration = 1000 * turns;
 
-    // $rullet.addEventListener("animationend", function () {
-    //   console.log("animation end");
-    //   this.style.transform = `rotate(${turns * 360}deg)`;
-    //   this.addEventListener(transitionEvent, transitionEndCallback);
-    // });
-
-    const transitionEndCallback = (e) => {
-      console.log("animate");
-    };
-
-    $rullet.addEventListener("animationend", transitionEndCallback);
-
     const spinnerAnimation = $rullet.animate(
       [
         { transform: "rotate(0deg)" },
@@ -35,8 +23,11 @@
       }
     );
 
+    // spinnerAnimation.addEventListener("start", function () {
+    //   $arrow.classList.add("arrowanimation");
+    // });
     spinnerAnimation.addEventListener("finish", function () {
-      console.log("finish");
+      // $arrow.classList.remove("arrowanimation");
     });
   };
 
