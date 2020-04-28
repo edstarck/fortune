@@ -21,7 +21,7 @@
 
     $rullet.addEventListener("animationend", transitionEndCallback);
 
-    $rullet.animate(
+    const spinnerAnimation = $rullet.animate(
       [
         { transform: "rotate(0deg)" },
         { transform: `rotate(${turns * 360}deg)` },
@@ -34,6 +34,10 @@
         fill: "forwards",
       }
     );
+
+    spinnerAnimation.addEventListener("finish", function () {
+      console.log("finish");
+    });
   };
 
   $spinBtn.addEventListener("click", turn);
